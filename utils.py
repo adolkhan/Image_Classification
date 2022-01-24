@@ -15,8 +15,8 @@ LOSS_NAME_TO_LOSS_CLASS = {
 }
 
 
-def create_optimizer(optimizer, model_params):
-    return OPTIMIZER_NAME_TO_OPTIMIZER_CLASS[optimizer](model_params)
+def create_optimizer(optimizer, model_params, **params):
+    return OPTIMIZER_NAME_TO_OPTIMIZER_CLASS[optimizer](model_params, **params)
 
 
 def available_device():
