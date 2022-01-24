@@ -17,12 +17,12 @@ def create_dataloader(dataset_name):
 
     trainset = DATASET_NAME_TO_DATASET_CLASS[dataset_name](root="./", train=True,
                        download=True, transform=transform)
-    trainloader = DataLoader(trainset, batch_size=128,
+    trainloader = DataLoader(trainset, batch_size=256,
                              shuffle=True, num_workers=4)
 
     testset = DATASET_NAME_TO_DATASET_CLASS[dataset_name](root="./", train=False,
                        download=True, transform=transform)
-    testloader = DataLoader(testset, batch_size=128,
+    testloader = DataLoader(testset, batch_size=256,
                             shuffle=True, num_workers=4)
     return trainloader, testloader
 
